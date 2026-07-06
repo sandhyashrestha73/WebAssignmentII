@@ -1,23 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} Examination Management{% endblock %}</title>
+    <title>{% block title %}Examination Management System{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <header>
-        <h1>Student Management System</h1>
+        <h1>Examination Management System</h1>
+
+        <nav>
+            <a href="{{ url_for('home') }}">Students</a>
+            <a href="{{ url_for('exams') }}">Exams</a>
+            <a href="{{ url_for('results') }}">Results</a>
+        </nav>
     </header>
 
     <div class="container">
         {% block content %}
-
         {% endblock %}
     </div>
 
 </body>
 </html>
+
