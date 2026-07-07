@@ -1,3 +1,7 @@
+/* ==========================
+   General
+========================== */
+
 *{
     margin:0;
     padding:0;
@@ -10,31 +14,35 @@ body{
     color:#333;
 }
 
-/* Header */
+/* ==========================
+   Header
+========================== */
 
 header{
     background:#3f4f44;
-    color:#fff;
-    padding:22px;
+    color:white;
+    padding:20px;
     text-align:center;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
 header h1{
-    letter-spacing:1px;
+    margin-bottom:10px;
 }
 
-/* Navigation */
+/* ==========================
+   Navigation
+========================== */
 
 nav{
-    margin-top:15px;
+    margin-top:10px;
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    color:#f7f4ed;
     margin:0 15px;
-    font-weight:600;
+    font-weight:bold;
     transition:.3s;
 }
 
@@ -42,157 +50,205 @@ nav a:hover{
     color:#d9b44a;
 }
 
-/* Main Container */
+/* ==========================
+   Container
+========================== */
 
 .container{
-    height: 90%;
     width:90%;
     max-width:1100px;
-    margin:35px auto;
-    background:#fffdf9;
+    margin:30px auto;
+    background:white;
     padding:30px;
     border-radius:15px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 h2{
-    color:#3f4f44;
     margin-bottom:20px;
+    color:#3f4f44;
 }
 
-/* Table */
+/* ==========================
+   Flash Message
+========================== */
+
+.flash{
+    width:90%;
+    max-width:1100px;
+    margin:20px auto;
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+    padding:15px;
+    border-radius:8px;
+}
+
+/* ==========================
+   Add Button
+========================== */
+
+.container>a{
+    display:inline-block;
+    text-decoration:none;
+    background:#c89b3c;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.container>a:hover{
+    background:#a67d2f;
+}
+
+/* ==========================
+   Table
+========================== */
 
 table{
     width:100%;
     border-collapse:collapse;
-    overflow:hidden;
-    border-radius:12px;
 }
 
 table th{
     background:#6b7d5b;
     color:white;
-    padding:15px;
-    font-size:16px;
+    padding:14px;
 }
 
 table td{
-    padding:14px;
     text-align:center;
-    border-bottom:1px solid #ececec;
+    padding:12px;
+    border-bottom:1px solid #ddd;
 }
 
 table tr:nth-child(even){
-    background:#faf8f3;
+    background:#f8f8f8;
 }
 
 table tr:hover{
     background:#eef4e8;
-    transition:.3s;
 }
 
-/* Buttons */
+/* ==========================
+   Action Links
+========================== */
 
-.btn{
+table td a{
     text-decoration:none;
-    background:#7c9a6d;
     color:white;
-    padding:8px 15px;
-    border-radius:8px;
-    transition:.3s;
+    padding:6px 12px;
+    border-radius:5px;
+    margin:2px;
     display:inline-block;
-    font-size:14px;
 }
 
-.btn:hover{
-    background:#5d7b50;
+table td a:first-child{
+    background:#4CAF50;
 }
 
-.btn-delete{
-    background:#b84c4c;
+table td a:first-child:hover{
+    background:#3b8b3f;
 }
 
-.btn-delete:hover{
-    background:#963838;
+table td a:last-child{
+    background:#d9534f;
 }
 
-.btn-add{
-    background:#c89b3c;
+table td a:last-child:hover{
+    background:#c9302c;
 }
 
-.btn-add:hover{
-    background:#a67d2f;
+/* ==========================
+   Form
+========================== */
+
+form{
+    max-width:550px;
+    margin:auto;
 }
 
-
-
-
-/* ---------- Add Student Form ---------- */
-.form-container{
-    width:100%;
-    max-width:500px;
-    margin:20px auto;
-    background:#fffdf9;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.form-container h1{
-    text-align:center;
-    color:#3f4f44;
-    margin-bottom:18px;
-    font-size:28px;
-}
-
-.student-form label{
+label{
     display:block;
-    margin-top:10px;
+    margin-top:15px;
     margin-bottom:5px;
-    color:#3f4f44;
-    font-weight:600;
+    font-weight:bold;
 }
 
-.student-form input[type="text"],
-.student-form input[type="email"],
-.student-form input[type="date"]{
+input[type=text],
+input[type=email],
+input[type=date],
+input[type=number],
+select{
     width:100%;
-    padding:10px 12px;
-    border:2px solid #d9c9a4;
+    padding:12px;
+    border:1px solid #ccc;
     border-radius:8px;
-    outline:none;
     font-size:15px;
 }
 
-.student-form input:focus{
+input:focus,
+select:focus{
     border-color:#6b7d5b;
+    outline:none;
 }
 
+/* ==========================
+   Radio Buttons
+========================== */
+
 .gender{
-    margin-top:5px;
+    margin-top:8px;
     margin-bottom:10px;
 }
 
-.student-form button{
-
-    width:100%;
-    margin-top:15px;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#6b7d5b;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-
+.gender input{
+    margin-right:5px;
+    margin-left:10px;
 }
 
+/* ==========================
+   Submit Button
+========================== */
 
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    background:#6b7d5b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
 
-.student-form button:hover{
-
+button:hover{
     background:#556548;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+nav a{
+    display:block;
+    margin:10px;
+}
+
+.container{
+    width:95%;
+}
 
 }

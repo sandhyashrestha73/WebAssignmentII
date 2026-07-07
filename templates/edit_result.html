@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Edit Result</h2>
+
+    <form method="POST">
+
+        <label>Student</label>
+
+            <select name="student_id">
+                {% for student in students %}
+
+                    <option
+                        value="{{ student.student_id }}"
+                        {% if student.student_id==result.student_id %}
+                        selected
+                        {% endif %}
+                    >
+
+                        {{ student.name }}
+
+                    </option>
+
+                {% endfor %}
+
+            </select><br><br>
+
+        <label>Exam</label>
+
+            <select name="exam_id">
+
+            {% for exam in exams %}
+
+            <option
+                value="{{ exam.exam_id }}"
+                {% if exam.exam_id==result.exam_id %}
+                selected
+                {% endif %}
+                >
+
+                {{ exam.exam_name }}
+
+            </option>
+
+        {% endfor %}
+
+        </select><br><br>
+
+        <label>Score</label>
+
+            <input type="number" step="0.01" name="score" value="{{ result.score }}" required><br><br>
+
+            <button>Update Result</button>
+
+    </form>
+
+{% endblock %}

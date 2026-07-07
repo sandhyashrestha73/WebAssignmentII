@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Result</h2>
+
+<form method="POST">
+
+<label>Student</label>
+
+<select name="student_id" required>
+
+{% for student in students %}
+
+<option value="{{ student.student_id }}">
+{{ student.name }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<label>Exam</label>
+
+<select name="exam_id" required>
+
+{% for exam in exams %}
+
+<option value="{{ exam.exam_id }}">
+{{ exam.exam_name }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<label>Score</label>
+
+<input
+type="number"
+step="0.01"
+name="score"
+required>
+
+<br><br>
+
+<button type="submit">
+
+Add Result
+
+</button>
+
+</form>
+
+{% endblock %}

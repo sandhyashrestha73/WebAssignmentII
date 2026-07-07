@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Exam</h2>
+
+<form method="POST">
+
+    <label>Exam Name</label>
+
+    <input
+        type="text"
+        name="exam_name"
+        value="{{ exam.exam_name }}"
+        required>
+
+
+      <label>Exam Date & Time</label>
+        <input type="datetime-local" name="exam_date" required> 
+        
+        
+    <button type="submit">
+        Update Exam
+    </button>
+
+</form>
+
+{% endblock %}

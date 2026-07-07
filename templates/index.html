@@ -7,7 +7,9 @@ Students
 {% block content %}
 
 <h2>Student List</h2>
-
+<a href="{{ url_for('addstud') }}" class="btn btn-add">
+    Add Student
+</a>
 <table>
     <thead>
         <tr>
@@ -18,6 +20,7 @@ Students
             <th>Gender</th>
             <th>Address</th>
             <th>Birthday</th>
+            <th>Actions</th>
         </tr>
     </thead>
 
@@ -31,6 +34,18 @@ Students
             <td>{{ student.gender }}</td>
             <td>{{ student.address }}</td>
             <td>{{ student.birthday }}</td>
+            <td>
+                <a href="{{ url_for('edit_student', id=student.student_id) }}" class="btn">
+                    Edit
+                </a>
+
+                <a href="{{ url_for('delete_student', id=student.student_id) }}"
+                    class="btn btn-delete"
+                    onclick="return confirm('Delete this student?')">
+                    Delete
+                </a>
+
+            </td>
         </tr>
         {% endfor %}
     </tbody>
