@@ -92,10 +92,7 @@ def edit_exam(id):
 
         return redirect("/exams")
 
-    return render_template(
-        "edit_exam.html",
-        exam=exam
-    )
+    return render_template("edit_exam.html",exam=exam)
 
 
 
@@ -106,7 +103,6 @@ def delete_exam(id):
     exam = Exams.query.get_or_404(id)
 
     db.session.delete(exam)
-
     db.session.commit()
 
     flash("Exam deleted successfully!")
@@ -158,10 +154,7 @@ def add_result():
 
         return redirect("/results")
 
-    return render_template(
-        "add_result.html",
-        students=students,
-        exams=exams
+    return render_template( "add_result.html", students=students, exams=exams
     )
 
 
@@ -170,17 +163,12 @@ def add_result():
 def edit_result(id):
 
     result = Results.query.get_or_404(id)
-
     students = Students.query.all()
-
     exams = Exams.query.all()
 
     if request.method == "POST":
-
         result.student_id = request.form["student_id"]
-
         result.exam_id = request.form["exam_id"]
-
         result.score = request.form["score"]
 
         db.session.commit()
@@ -189,22 +177,16 @@ def edit_result(id):
 
         return redirect("/results")
 
-    return render_template(
-        "edit_result.html",
-        result=result,
-        students=students,
-        exams=exams
+    return render_template("edit_result.html", result=result, students=students, exams=exams
     )
 
 
 
 @app.route("/results/delete/<int:id>")
 def delete_result(id):
-
     result = Results.query.get_or_404(id)
 
     db.session.delete(result)
-
     db.session.commit()
 
     flash("Result deleted successfully!")
@@ -257,7 +239,6 @@ def addstud():
 
 
 
-
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit_student(id):
 
@@ -278,10 +259,7 @@ def edit_student(id):
 
         return redirect("/")
 
-    return render_template(
-        "edit.html",
-        student=student
-    )
+    return render_template("edit.html", student=student)
 
 
 
@@ -290,7 +268,6 @@ def delete_student(id):
     student = Students.query.get_or_404(id)
 
     db.session.delete(student)
-
     db.session.commit()
 
     flash("Student deleted successfully!")
